@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://scontent.fbkk22-4.fna.fbcdn.net/v/t1.6435-9/54398084_2257064017847825_7008098523430256640_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeFOmTtqE4kwi_WfSFHhXywnrK3W8ljdBgusrdbyWN0GC56KnXFinBe8gYvirW4ik1ErkWNQUStYO8J6A-Eg52Mo&_nc_ohc=JaIaFpkXH-8AX-X1O8K&_nc_oc=AQnhorNKScg7mNF6BhQTPGejJw9lMkv6ocUfuCxwIAn54tI4hw1i5ADPhiLQUHRwpco&_nc_ht=scontent.fbkk22-4.fna&oh=b73f89421b63360d5734d24c418b56cb&oe=61D7D817");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
