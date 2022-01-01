@@ -1,9 +1,10 @@
 import React from 'react'
+import CustomizedTables from './components/Table'
 
 function Messages() {
     return (
         <div>
-            <h1>This is Patient Page</h1>
+            <CustomizedTables />
         </div>
     )
 }

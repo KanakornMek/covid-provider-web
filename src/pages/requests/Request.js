@@ -1,9 +1,10 @@
 import React from 'react'
+import CustomizedTables from './components/Table'
 
 function User() {
     return (
         <div>
-            <h1>This is Request Page</h1>
+           <CustomizedTables />
         </div>
     )
 }
