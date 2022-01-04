@@ -1,9 +1,14 @@
 import React from 'react'
+import './CSS/Usermanager.css'
+import Sidebar from '../components/Sidebar';
 
 function Filemanager() {
     return (
         <div>
-            <h1>This is Usermanager Page</h1>
+            <Sidebar />
+            <div class="bord-usermanager">
+                <h1>This is Usermanager Page</h1>
+            </div>
         </div>
     )
 }

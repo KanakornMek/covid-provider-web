@@ -11,7 +11,6 @@ import UserManager from './pages/UserMangaer';
 function App() {
   return (
       <div className="App">
-        <Sidebar />
         <Routes Routes>
         <Route exact path="/" element={<Overview />} />
         <Route path="request" element={<Request />} />
