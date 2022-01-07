@@ -14,7 +14,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: 'blue',
+    backgroundColor: '#155ACD',
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -24,7 +24,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-   backgroundColor: 'white'
+   backgroundColor: '#white'
 
 }));
 
@@ -47,7 +47,7 @@ export default function CustomizedTables() {
   return (
     <>
       <MyModal open={openModal} setOpen={setOpenModal} data={selectedData} />
-      <TableContainer sx={{ width: '80%'}} component={Paper}>
+      <TableContainer sx={{ width: '100%'}} component={Paper}>
         <Table sx={{}} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -72,12 +72,12 @@ export default function CustomizedTables() {
                 <StyledTableCell >{row.Type}</StyledTableCell>
                 <StyledTableCell >{row.Bed}</StyledTableCell>
 
-                <StyledTableCell>
+                <StyledTableCell align='right' >
                   <Button sx={{
                     '&:hover': {
-                      backgroundColor: 'gray'
+                      backgroundColor: '#001f54'
                     },
-                    backgroundColor: 'blue',
+                    backgroundColor: '#155ACD',
                     color: 'white'
                   }}
                     variant="contained"

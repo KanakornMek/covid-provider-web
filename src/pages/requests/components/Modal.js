@@ -71,7 +71,7 @@ function MyModal({ open, setOpen, data }) {
                                     }
                                 }} >Decline</Button>
 
-                            <Button variant='contaoned'
+                            <Button variant='contained'
                                 sx={{
                                     backgroundColor: '#5EF48B', '&:hover': {
                                         backgroundColor: '#00f74a'

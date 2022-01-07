@@ -28,7 +28,7 @@ function MyModal({ open, setOpen, data }) {
                             <div>
                                 <div className='titlebox1'>
                                     <Avatar src={data.picture} />
-                                    <p style={{marginLeft : 10,marginTop : 10}}>Name : {data.name}</p>
+                                    <p style={{ marginLeft: 10, marginTop: 10 }}>Name : {data.name}</p>
                                 </div>
                                 <div className='titlebox2'>
                                     <h1 >Age : 16</h1>
@@ -42,28 +42,28 @@ function MyModal({ open, setOpen, data }) {
                                     <h1 >Day in: 10 Apr 64</h1>
                                     <h1 >Day out: 24 Apr 64</h1>
                                 </div>
-                                
+
                             </div>
                             <Carousel showArrows={true} width={200} emulateTouch dynamicHeight swipeable >
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
-                                    </div>
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'green' }}></div>
-                                    </div>
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'blue' }}></div>
-                                    </div>
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
-                                    </div>
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
-                                    </div>
-                                    <div>
-                                        <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
-                                    </div>
-                                </Carousel>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'green' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'blue' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ width: 200, height: 250, backgroundColor: 'red' }}></div>
+                                </div>
+                            </Carousel>
                         </div>
 
 
@@ -73,16 +73,19 @@ function MyModal({ open, setOpen, data }) {
                                 sx={{
                                     borderColor: 'red',
                                     '&:hover': {
-                                        backgroundColor: 'darkred'
-                                    },color : 'red' ,border : 2
+                                        backgroundColor: 'red',
+                                        color: 'white'
+                                    }, color: 'red', 
                                 }} >Edit</Button>
 
-                            <Button variant='outlined'
+                            <Button variant='contained'
                                 sx={{
-                                    borderColor: '#5EF48B', '&:hover': {
-                                        backgroundColor: '#00f74a'
+                                    backgroundColor: '#00f74a', 
+                                    '&:hover': {
+                                        backgroundColor: '#00a130',
+                                        
                                     }
-                                    , marginLeft: 1.5,color :'#5EF48B',border : 2
+                                    , marginLeft: 1.5, 
                                 }}
                             >Save</Button>
                         </div>
