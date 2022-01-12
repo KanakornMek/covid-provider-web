@@ -1,6 +1,7 @@
 import React from 'react'
 import './LandingPage.css'
 import tenthepres2 from './assets/tenthepres2.svg'
+import { Link } from "react-router-dom";
 
 export default function LandingPage() {
     return (
@@ -26,9 +27,14 @@ export default function LandingPage() {
                                 <label></label>
                                 <input type="password" required></input>
                             </div>
-                            <div className='befLoginButt'></div>
+                            <div className='befLoginButt'>
+                                <Link to='#'>Forgot Password?</Link>
+                            </div>
                             <div className='LoginButt'>
                                 <input type="submit" value="Login"></input>
+                            </div>
+                            <div className='afterLoginButt'>
+                                Have a troble with logging in? <Link to='#'>Contact us</Link>
                             </div>
                         </form>
                     </div>
