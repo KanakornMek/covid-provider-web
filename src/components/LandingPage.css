@@ -5,8 +5,8 @@
 .LeftSideComponent{
     width: 50%;
     height: 100%;
-    background: rgb(0,66,194);
-    background: linear-gradient(45deg, rgba(0,66,194,1) 0%, rgba(127,209,255,1) 100%);
+    background: rgb(0,36,142);
+    background: linear-gradient(45deg, rgba(0,36,142,1) 0%, rgba(103,200,255,1) 100%);
     display: flex;
 }
 
@@ -28,7 +28,6 @@
 .RightSideComponent {
     width: 50%;
     height: 100%;
-    background-color: rgb(224, 224, 224);
 }
 .RightHeroContainer {
     width: 100%;
@@ -37,12 +36,96 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10%;
 }
 
+.LoginHeadContainer{
+    margin-bottom: 5%;
+    width:75%
+}
 .LoginText {
     font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
 }
 .LoginDesText{
     font-family: 'Roboto', sans-serif;
     color: rgb(77, 77, 77);
+}
+
+.LoginFormContainer{
+    width:60%
+}
+
+.UsernameForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7%;
+}
+.PasswordForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+.befLoginButt {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 5%;
+}
+.UsernameForm label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(77, 77, 77);
+    padding-bottom: 2%;
+}
+
+.PasswordForm label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(77, 77, 77);
+    padding-bottom: 2%;
+}
+
+input[type="email"]{
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    border: 3px solid #d8d6d6;
+}
+
+input[type="password"]{
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    border: 3px solid #d8d6d6;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 0px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5%;
+}
+
+input[type="submit"]:hover{
+    background: #155ACD;
+}
+
+.befLoginButt Link {
+    display:none;
+}
+
+.afterLoginButt {
+    display:flex;
+    justify-content: center;
 }
