@@ -21,6 +21,7 @@ body{
     left: 0;
     padding: 6px 14px;
     background: #11101d;
+    /* background: white; */
     transition: all 0.5s ease;
 }
 .sidebar.active{
