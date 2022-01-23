@@ -19,7 +19,7 @@ export default function LandingPage() {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            navigate("/")
+            navigate("overview")
         } catch {
             setError('Failed to Login')
         }
