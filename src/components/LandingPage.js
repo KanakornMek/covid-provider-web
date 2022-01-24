@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './LandingPage.css'
 import tenthepres2 from './assets/tenthepres2.svg'
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext'
 
 export default function LandingPage() {
-    const emailRef = useRef()
+    const usernameRef = useRef()
     const passwordRef = useRef()
     const { login, currentUser } = useAuth()
     const [error, setError] = useState('')
@@ -18,15 +18,22 @@ export default function LandingPage() {
         try {
             setError("")
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            navigate("/")
+            await login(usernameRef.current.value, passwordRef.current.value)
+            navigate("/overview")
         } catch {
             setError('Failed to Login')
+            console.log(error);
+        } finally {
+            setLoading(false);
         }
-        setLoading(false)
+        
     }
 
-
+    useEffect(() => {
+        if(currentUser){
+            navigate("/overview");
+        }
+    }, [])
 
     return (
         <div className="colossal-box">
@@ -46,7 +53,7 @@ export default function LandingPage() {
                         <form onSubmit = {handleSubmit}>
                             <div className='UsernameForm'>
                                 <label>USERNAME</label>
-                                <input type="email" ref={emailRef} required></input>
+                                <input type="text" ref={usernameRef} required></input>
                             </div>
                             <div className='PasswordForm'>
                                 <label>PASSWORD</label>
