@@ -21,6 +21,7 @@ body{
     left: 0;
     padding: 6px 14px;
     background: #11101d;
+    z-index: 100;
     /* background: white; */
     transition: all 0.5s ease;
 }
