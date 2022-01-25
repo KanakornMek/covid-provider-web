@@ -6,7 +6,7 @@
     width: 50%;
     height: 100%;
     background: rgb(0,36,142);
-    background: linear-gradient(45deg, #1F2F98 10%, #1CA7EC 80%);
+    background: linear-gradient(45deg, rgba(0,36,142,1) 0%, rgba(103,200,255,1) 100%);
     display: flex;
 }
 
