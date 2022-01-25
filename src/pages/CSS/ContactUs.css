@@ -1,7 +1,9 @@
-body {
+.Biggest {
     background: rgb(0,36,142);
     background: linear-gradient(45deg, #1F2F98 10%, #1CA7EC 80%);
     position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 
 .ContactUsCard{
@@ -48,7 +50,7 @@ body {
     flex-direction: column;
 }
 
-input[type="text"]{
+.FormName input[type="text"]{
     width: 400px;
     height: 40px;
     border: none;
@@ -56,7 +58,19 @@ input[type="text"]{
     border-radius: 0px;
     outline: none;
 }
-input[type="text"]:focus{
+.FormName input[type="text"]:focus{
+    border-bottom: 2px solid rgb(0, 110, 255);
+}
+
+.FormSubject input[type="text"]{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid rgb(192, 192, 192);
+    border-radius: 0px;
+    outline: none;
+}
+.FormSubject input[type="text"]:focus{
     border-bottom: 2px solid rgb(0, 110, 255);
 }
 
