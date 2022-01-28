@@ -1,0 +1,102 @@
+.modalBackground{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modalContainer{
+    width: 500px;
+    height: 550px;
+    background-color: white;   
+    top: 50%;
+    left: 50%;
+    margin-left: 50vw;
+    transform: translate(-50%, 0);
+    border-radius: 15px;
+}
+.modalHeader{
+    background-color: #155ACD;
+    border-radius: 15px 15px 0 0;
+    height: 50px;
+}
+.modalHeaderText{
+    color: white;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.FormRoomNameSection input[type="text"]{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid rgb(192, 192, 192);
+    border-radius: 0px;
+    outline: none;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.FormRoomNameSection input[type="text"]:focus{
+    border-bottom: 2px solid rgb(0, 110, 255);
+}
+.FormRoomAmountSection input[type="number"]{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid rgb(192, 192, 192);
+    border-radius: 0px;
+    outline: none;
+    -moz-appearance: textfield;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+.FormRoomAmountSection input[type="number"]:focus{
+    border-bottom: 2px solid rgb(0, 110, 255);
+}
+.FormRoomPriceSection input[type="number"]{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid rgb(192, 192, 192);
+    border-radius: 0px;
+    outline: none;
+    -moz-appearance: textfield;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+.FormRoomPriceSection input[type="number"]:focus{
+    border-bottom: 2px solid rgb(0, 110, 255);
+}
+.modalBottomrlt{
+    position:relative;
+    height: 200px;
+    width:500px;
+}
+.modalBottom{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+.cancleButt{
+    padding-inline: 10px;
+    margin-inline: 10px;
+}
+.removeButt{
+    padding-inline: 10px;
+    margin-inline: 10px;
+}
+.saveButt{
+    padding-inline: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
