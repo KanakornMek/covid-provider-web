@@ -6,7 +6,7 @@ function Analytics() {
     return (
         <div>
             <Sidebar />
-            <div class="bord-setting">
+            <div className="bord-setting">
                 <h1>This is Setting Page</h1>
             </div>
         </div>

@@ -1,0 +1,15 @@
+.bord-patient{
+    margin-left: 78px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.table {
+    width: 80%;
+}
+.patient_title {
+    font-family: 'Kanit';
+    font-size: 2.5rem;
+}

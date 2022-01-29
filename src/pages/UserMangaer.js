@@ -6,7 +6,7 @@ function Filemanager() {
     return (
         <div>
             <Sidebar />
-            <div class="bord-usermanager">
+            <div className="bord-usermanager">
                 <h1>This is Usermanager Page</h1>
             </div>
         </div>

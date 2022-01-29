@@ -2,7 +2,7 @@ import Sidebar from './components/Sidebar';
 import { Routes, Route, Link, useLocation, Navigate, } from "react-router-dom";
 import Overview from './pages/Overview';
 import Request from './pages/RequestPage/Request';
-import Patient from './pages/Patient';
+import Patient from './pages/PatientPage/Patient';
 import Setting from './pages/Setting';
 import UserManager from './pages/UserMangaer';
 import LandingPage from './components/LandingPage';

@@ -7,7 +7,7 @@ function Overview() {
     return (
         <div className='body'>
             <Sidebar />
-            <div class="bord-overview">
+            <div className="bord-overview">
                 <div className='Overview-Text'>
                     <h1>Overview</h1>
                 </div>
