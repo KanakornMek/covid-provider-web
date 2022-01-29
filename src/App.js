@@ -1,13 +1,14 @@
 import Sidebar from './components/Sidebar';
 import { Routes, Route, Link, useLocation, Navigate, } from "react-router-dom";
 import Overview from './pages/Overview';
-import Request from './pages/RequestPage/Request';
+import Request from './pages/Request';
 import Patient from './pages/Patient';
 import Setting from './pages/Setting';
 import UserManager from './pages/UserMangaer';
 import LandingPage from './components/LandingPage';
 import { AuthProvider } from '../src/contexts/AuthContext';
 import { useAuth } from '../src/contexts/AuthContext';
+import ContactUs from './pages/ContactUs';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <AuthProvider>
         <Routes Routes>
           <Route exact path="/" element={<LandingPage />} />
+          <Route path="contact-us" element={<ContactUs />} />
           <Route path="overview" element={
             <RequireAuth>
               <Overview />
