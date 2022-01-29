@@ -40,9 +40,11 @@ function Patient() {
                             </Select>
                         </FormControl>
                         <TextField value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="ค้นหา" />
-                        <FormControlLabel control={<Checkbox value={isArrived} onChange={(e) => {
-                            setIsArrived(e.target.checked)
-                        }} />} label="เข้ารับบริการแล้ว" />
+                        {selectedService === 1 && 
+                            <FormControlLabel control={<Checkbox value={isArrived} onChange={(e) => {
+                                setIsArrived(e.target.checked)
+                            }} />} label="เข้ารับบริการแล้ว" />
+                        }
                     </div>
                     <CustomizedTables selected={selectedService} isArrived={isArrived} searchTerm={searchTerm} />
                 </div>

@@ -109,7 +109,9 @@ function RequestModal({ open, setOpen, reqData, selected }) {
     const [range, setRange] = useState([null, null])
     const [bedId, setBedId] = useState('');
     const [loading, setLoading] = useState(false);
+    const [addressModal, setAddressModal] = useState(false);
     useEffect(() => {
+        console.log(selected)
         storage.ref(`${selected === 1 ? 'reserveBed' : 'homeIsolate'}/${hospitalId}/patients/${reqData.data.userId}/FacewithID`).getDownloadURL().then((url) => {
             setFacewithID(url);
         }).catch((error) => {
@@ -174,7 +176,7 @@ function RequestModal({ open, setOpen, reqData, selected }) {
                         <PreviewImgModal open={previewModal} setOpen={setpreviewModal} imgURL={selectedImg} />
                         <div className='header' >
                             <div className='box' >
-                                <p className="title"> Patient - {reqData.data.firstname} </p>
+                                <p className="title"> ผู้ป่วย - {reqData.data.firstname} {reqData.data.lastname} </p>
                                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={() => setOpen(false)}>
                                     <Close />
                                 </div>
@@ -185,25 +187,48 @@ function RequestModal({ open, setOpen, reqData, selected }) {
                                 <div>
                                     <div className='titlebox1'>
                                         <Avatar src='' />
-                                        <p style={{ marginLeft: 10, marginTop: 10 }}>Name : {(reqData.data.firstname + ' ' + reqData.data.lastname)}</p>
+                                        <p style={{ marginLeft: 10, marginTop: 10 }}>ชื่อ : {(reqData.data.firstname + ' ' + reqData.data.lastname)}</p>
                                     </div>
                                     <div className='titlebox2'>
                                         <p className='patient-details'>วันเกิด: {calcAge(reqData.data.birthDate)}</p>
-                                        <p className='patient-details' >เพศ: {reqData.data.gender === 'female' ? 'หญิง' : 'ชาย'}</p>
+                                        <p className='patient-details'>เพศ: {reqData.data.gender === 'female' ? 'หญิง' : 'ชาย'}</p>
                                         <p className='patient-details'>เลขบัตรปชช.: {reqData.data.id_no}</p>
                                         <p className='patient-details'>เบอร์โทรศัพท์: {reqData.data.phoneNumber}</p>
                                     </div>
-                                    <div style={{ margin: '10px 0px'}}>
-                                        {selected===1 && 
+                                    {selected === 2 &&
+                                        <>
+                                            <div>
+                                                <button onClick={() => setAddressModal(!addressModal)}>แสดงที่อยู่</button>
+                                            </div>
+
+                                            <Modal
+                                                className="modal"
+                                                open={addressModal}
+                                                onClose={() => setAddressModal(false)}
+                                            >
+                                                <div className='address-container'>
+                                                    <h2>ที่อยู่</h2>
+                                                    <p>{reqData.data.address}</p>
+                                                    <p>แขวง/ตำบล: {reqData.data.tumbon}</p>
+                                                    <p>เขต/อำเภอ: {reqData.data.district}</p>
+                                                    <p>จังหวัด: {reqData.data.province}</p>
+                                                    <p>รหัสไปรษณีย์: {reqData.data.postalCode}</p>
+                                                </div>
+                                            </Modal>
+                                        </>
+                                    }
+
+                                    <div style={{ margin: '10px 0px' }}>
+                                        {selected === 1 &&
                                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                                 <TextField label='เลขที่ห้อง' size='small' onChange={(e) => {
                                                     setBedId(e.target.value)
                                                     console.log(bedId);
                                                 }} />
-                                            </div> 
+                                            </div>
                                         }
-                                        
-                                        <div style={{margin: '5px 0px'}}>
+
+                                        <div style={{ margin: '5px 0px' }}>
                                             <LocalizationProvider dateAdapter={AdapterDateFns}>
                                                 <DateRangePicker
                                                     startText="Check-in"
@@ -302,7 +327,7 @@ function RequestModal({ open, setOpen, reqData, selected }) {
                                     }}
                                     onClick={() => {
                                         console.log(range)
-                                        if(selected === 1 && range[0] !== null && range[1] !== null && bedId !==''){
+                                        if (selected === 1 && range[0] !== null && range[1] !== null && bedId !== '') {
                                             setLoading(true);
                                             let accept = functions.httpsCallable('acceptBedRequest')
                                             accept({ bedId: bedId, admitDate: range[0], releaseDate: range[1], requestId: reqData.id }).then((result) => {
@@ -310,15 +335,15 @@ function RequestModal({ open, setOpen, reqData, selected }) {
                                                 setOpen(false);
                                                 console.log(result.data.status);
                                             })
-                                        } else if(selected === 2 && range[0] !== null && range[1] !== null) {
+                                        } else if (selected === 2 && range[0] !== null && range[1] !== null) {
                                             setLoading(true);
                                             let accept = functions.httpsCallable('acceptHomeRequest')
-                                            accept({admitDate: range[0], releaseDate: range[1], requestId: reqData.id }).then((result) => {
+                                            accept({ admitDate: range[0], releaseDate: range[1], requestId: reqData.id }).then((result) => {
                                                 setLoading(false);
                                                 setOpen(false);
                                                 console.log(result.data.status);
                                             })
-                                        } else{
+                                        } else {
                                             alert('กรุณาพิมพ์รายละเอียด')
                                         }
                                     }}

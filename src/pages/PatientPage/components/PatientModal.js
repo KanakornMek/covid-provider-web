@@ -111,8 +111,9 @@ function PatientModal({ open, setOpen, patientData, selected }) {
     const [covidTest, setCovidTest] = useState('');
     const [range, setRange] = useState([tStampToDate(patientData.data.admitDate.seconds), tStampToDate(patientData.data.releaseDate.seconds)])
     const [bedId, setBedId] = useState(patientData.data.bedId);
-    const [isArrived, setIsArrived] = useState(selected === 1 ? patientData.data.arrived : null);
+    const [isArrived, setIsArrived] = useState(selected === 1 ? patientData.data.arrived : false);
     const [loading, setLoading] = useState(false);
+    const [addressModal, setAddressModal] = useState(false);
     useEffect(() => {
         storage.ref(`${service}/${hospitalId}/patients/${patientData.data.userId}/FacewithID`).getDownloadURL().then((url) => {
             setFacewithID(url);
@@ -151,6 +152,9 @@ function PatientModal({ open, setOpen, patientData, selected }) {
             }
         });
     }, [selected])
+    useEffect(() => {
+        console.log(typeof(isArrived), isArrived)
+    },[isArrived])
     function tStampToDate(timestamp) {
         return new Date(timestamp * 1000)
     }
@@ -199,6 +203,22 @@ function PatientModal({ open, setOpen, patientData, selected }) {
                                         <p className='patient-details'>เลขบัตรปชช.: {patientData.data.id_no}</p>
                                         <p className='patient-details'>เบอร์โทรศัพท์: {patientData.data.phoneNumber}</p>
                                     </div>
+                                    {selected ===2 && 
+                                        <Modal
+                                            className="modal"
+                                            open={addressModal}
+                                            onClose={() => setAddressModal(false)}
+                                        >
+                                            <div className='address-container'>
+                                                <h2>ที่อยู่</h2>
+                                                <p>{patientData.data.address}</p>
+                                                <p>แขวง/ตำบล: {patientData.data.tumbon}</p>
+                                                <p>เขต/อำเภอ: {patientData.data.district}</p>
+                                                <p>จังหวัด: {patientData.data.province}</p>
+                                                <p>รหัสไปรษณีย์: {patientData.data.postalCode}</p>
+                                            </div>
+                                        </Modal>
+                                    }
                                     <div style={{ margin: '10px 0px' }}>
                                         {selected === 1 &&
                                             <div style={{ display: 'flex',gap:5 }}>
@@ -211,7 +231,7 @@ function PatientModal({ open, setOpen, patientData, selected }) {
                                                 />
                                                 <FormControlLabel control={
                                                     <Checkbox value={isArrived} onChange={(e) => {
-                                                        setIsArrived(e.target.value);
+                                                        setIsArrived(e.target.checked);
                                                     }} />} label="เข้ารับบริการแล้ว" />
                                             </div>
                                         }

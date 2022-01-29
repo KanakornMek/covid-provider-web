@@ -36,7 +36,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
     const [requestsHome, setRequestsHome] = useState([]);
     useEffect(() => {
         console.log(auth.currentUser.uid);
-        const bedSubscriber = firestore.collection('reserveBed').doc(auth.currentUser.uid).collection('requests').onSnapshot((snapshot) => {
+        const bedSubscriber = firestore.collection('reserveBed').doc(auth.currentUser.uid).collection('requests').orderBy('createdOn','asc').onSnapshot((snapshot) => {
             var results = [];
             if (!snapshot.empty) {
                 snapshot.forEach((doc) => {
@@ -47,7 +47,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
             setRequestsBed(results);
             console.log(results)
         });
-        const homeSubscriber = firestore.collection('homeIsolate').doc(auth.currentUser.uid).collection('requests').onSnapshot((snapshot) => {
+        const homeSubscriber = firestore.collection('homeIsolate').doc(auth.currentUser.uid).collection('requests').orderBy('createdOn', 'asc').onSnapshot((snapshot) => {
             var results = [];
             if (!snapshot.empty) {
                 snapshot.forEach((doc) => {
@@ -82,7 +82,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
                     </TableHead>
                     <TableBody>
                         {selected === 1 ? requestsBed.filter((val) => {
-                            if (searchTerm == "") {
+                            if (searchTerm === "") {
                                 return val;
                             } else if ((val.data.firstname + val.data.lastname).toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return val;
@@ -120,7 +120,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
                             );
 
                         }) : requestsHome.filter((val) => {
-                            if (searchTerm == "") {
+                            if (searchTerm === "") {
                                 return val;
                             } else if ((val.data.firstname + val.data.lastname).toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return val;
@@ -132,7 +132,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
                                         <Avatar src={''} />
                                     </StyledTableCell>
                                     <StyledTableCell>
-                                        {request.data.firstname + request.data.lastname}
+                                        {request.data.firstname + ' ' + request.data.lastname}
                                     </StyledTableCell>
 
 

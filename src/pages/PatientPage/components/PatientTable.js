@@ -30,7 +30,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-export default function CustomizedTables({selected, isArrived, searchTerm}) {
+export default function CustomizedTables({selected, isArrived, searchTerm,}) {
     const [selectedData, setSelectedData] = useState({});
 
     const [openModal, setOpenModal] = useState(false);
@@ -92,41 +92,40 @@ export default function CustomizedTables({selected, isArrived, searchTerm}) {
                                     return val;
                                 }
                             }).map((patient, index) => {
-                                if(isArrived && !patient.data.arrived){
-                                    return;
-                                }
-                                return (
-                                    <StyledTableRow key={index}>
-                                        <StyledTableCell>
-                                            <Avatar src={''} />
-                                        </StyledTableCell>
-                                        <StyledTableCell>
-                                            {patient.data.firstname + patient.data.lastname}
-                                        </StyledTableCell>
-                                        <StyledTableCell>{patient.data.roomType}</StyledTableCell>
-                                        <StyledTableCell>{patient.data.bedId}</StyledTableCell>
-                                        <StyledTableCell>{patient.data.arrived ? 'เข้ารับบริการแล้ว' : 'ยังไม่เข้ารับบริการ'}</StyledTableCell>
-                                        <StyledTableCell align='right' >
-                                            <Button sx={{
-                                                '&:hover': {
-                                                    backgroundColor: '#001f54'
-                                                },
-                                                backgroundColor: '#155ACD',
-                                                color: 'white'
-                                            }}
-                                                variant="contained"
-                                                onClick={() => {
-                                                    setSelectedData(patient);
-                                                    setOpenModal(true);
+                                if(isArrived === patient.data.arrived){
+                                    return (
+                                        <StyledTableRow key={index}>
+                                            <StyledTableCell>
+                                                <Avatar src={''} />
+                                            </StyledTableCell>
+                                            <StyledTableCell>
+                                                {patient.data.firstname + ' ' + patient.data.lastname}
+                                            </StyledTableCell>
+                                            <StyledTableCell>{patient.data.roomType}</StyledTableCell>
+                                            <StyledTableCell>{patient.data.bedId}</StyledTableCell>
+                                            <StyledTableCell>{patient.data.arrived ? 'เข้ารับบริการแล้ว' : 'ยังไม่เข้ารับบริการ'}</StyledTableCell>
+                                            <StyledTableCell align='right' >
+                                                <Button sx={{
+                                                    '&:hover': {
+                                                        backgroundColor: '#001f54'
+                                                    },
+                                                    backgroundColor: '#155ACD',
+                                                    color: 'white'
                                                 }}
-                                            >
-                                                Detail
-                                            </Button>
-                                        </StyledTableCell>
-    
-                                    </StyledTableRow>
-                                );
-    
+                                                    variant="contained"
+                                                    onClick={() => {
+                                                        setSelectedData(patient);
+                                                        setOpenModal(true);
+                                                    }}
+                                                >
+                                                    Detail
+                                                </Button>
+                                            </StyledTableCell>
+        
+                                        </StyledTableRow>
+                                    );
+                                }
+                                return;
                             })
                             : patientsHome.filter((val) => {
                                 if(searchTerm == ""){
@@ -141,9 +140,8 @@ export default function CustomizedTables({selected, isArrived, searchTerm}) {
                                             <Avatar src={''} />
                                         </StyledTableCell>
                                         <StyledTableCell>
-                                            {patient.data.firstname + patient.data.lastname}
+                                            {patient.data.firstname + ' ' + patient.data.lastname}
                                         </StyledTableCell>
-                                        <StyledTableCell >{patient.data.roomType}</StyledTableCell>
                                         <StyledTableCell align='right' >
                                             <Button sx={{
                                                 '&:hover': {
