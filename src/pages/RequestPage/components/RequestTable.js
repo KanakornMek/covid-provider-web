@@ -94,7 +94,7 @@ export default function CustomizedTables({ selected, searchTerm }) {
                                         <Avatar src={''} />
                                     </StyledTableCell>
                                     <StyledTableCell>
-                                        {request.data.firstname + request.data.lastname}
+                                        {request.data.firstname+ ' ' + request.data.lastname}
                                     </StyledTableCell>
                                     <StyledTableCell >{request.data.roomType}</StyledTableCell>
 

@@ -13,8 +13,7 @@ function Sidebar() {
         <div className={click ? "sidebar active": "sidebar"}>
             <div className="logo-content">
                 <div className="logo">
-                    <i className='bx bxl-meta' ></i>
-                    <div className="logo-name">Meta</div>
+                    <div className="logo-name">qCovid</div>
                 </div>
                 <i className='bx bx-menu'id="btn" onClick={handleClick} ></i>
             </div>
@@ -22,37 +21,30 @@ function Sidebar() {
                 <li>
                     <Link to="/overview">
                         <i className='bx bx-pie-chart-alt'></i>
-                        <span className="links-name">Overview</span>
+                        <span className="links-name">ภาพรวม</span>
                     </Link>
-                    <span className="tooltip">Overview</span>
+                    <span className="tooltip">ภาพรวม</span>
                 </li>
                 <li>
                     <Link to="/request">
                     <i className='bx bx-user-plus'></i>
-                        <span className="links-name">Request</span>
+                        <span className="links-name">คำขอการจอง</span>
                     </Link>
-                    <span className="tooltip">Request</span>
+                    <span className="tooltip">คำขอการจอง</span>
                 </li>
                 <li>
                     <Link to="/patient">
                         <i className='bx bx-user' ></i>
-                        <span className="links-name">Patient</span>
+                        <span className="links-name">รายชื่อผู้ป่วย</span>
                     </Link>
-                    <span className="tooltip">Patient</span>
+                    <span className="tooltip">รายชื่อผู้ป่วย</span>
                 </li>
                 <li>
                     <Link to="/setting">
                         <i className='bx bx-bed' ></i>
-                        <span className="links-name">Setting</span>
+                        <span className="links-name">การตั้งค่า</span>
                     </Link>
-                    <span className="tooltip">Setting</span>
-                </li>
-                <li>
-                    <Link to="/usermanager">
-                        <i className='bx bxs-user'></i>
-                        <span className="links-name">User Manager</span>
-                    </Link>
-                    <span className="tooltip">User Manager</span>
+                    <span className="tooltip">การตั้งค่า</span>
                 </li>
             </ul>
             <div className="profile-content">

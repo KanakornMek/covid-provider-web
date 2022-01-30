@@ -79,6 +79,7 @@ body{
     line-height: 50px;
 }
 .sidebar ul li .tooltip{
+    font-family: 'Kanit';
     position: absolute;
     left: 70px;
     top: 0px;
@@ -125,6 +126,8 @@ body{
 .sidebar .links-name{
     opacity: 0;
     pointer-events: none;
+    font-family: 'Kanit';
+
 }
 .sidebar.active .links-name{
     opacity: 1;

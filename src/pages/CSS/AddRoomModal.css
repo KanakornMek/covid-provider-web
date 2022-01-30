@@ -1,0 +1,73 @@
+
+.modalContainer{
+    width: 500px;
+    background-color: white;   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+.modalHeader{
+    background-color: #155ACD;
+    border-radius: 15px 15px 0 0;
+    padding: 18px;
+}
+.modalHeaderText{
+    color: white;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modalBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin:  50px 0px;
+}
+.modalBody form {
+    width: 80%;
+}
+.FormSection input:focus{
+   border-bottom: 2px solid rgb(0, 110, 255);
+}
+.FormSection input {
+    border: none;
+    border-bottom: 2px solid rgb(192, 192, 192);
+    outline: none;
+    width: 100%;
+}
+.FormSection input[type=file] {
+    border: none;
+    width: 100%;
+}
+.modalBottomrlt{
+    padding: 10px;
+    margin: 10px
+}
+.modalBottom{
+    display: flex;
+    justify-content: flex-end;
+}
+.modalBottom Button {
+    margin: 0px 5px;
+}
+.cancleButt{
+    padding-inline: 10px;
+    margin-inline: 10px;
+}
+.removeButt{
+    padding-inline: 10px;
+    margin-inline: 10px;
+}
+.saveButt{
+    padding-inline: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}

@@ -1,3 +1,122 @@
 .bord-setting{
     margin-left: 78px;
 }
+.SettingText{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+.AddRoomBox{
+    position: relative;
+    width: 100vw;
+}
+.AddRoomText{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 15%;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.AddRoomText:hover{
+    color:#155ACD;
+}
+.BigBox{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.RoomBox{
+    width:70vw;
+    height: 80px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.NumberBox{
+    width: 100px;
+    background-color: #155ACD;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.NameSection{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.AmountSection{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.PriceSection{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.NameText{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color:#747474;
+}
+.AmountText{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color:#747474;
+}
+.PriceText{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color:#747474;
+}
+.NameValue{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.EditButton{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.EditRoomButton{
+    background-color: #1CA7EC;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;  
+    font-size: 16px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.EditRoomButton:hover{
+    background-color: #155ACD;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
